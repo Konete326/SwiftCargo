@@ -1,6 +1,16 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
+    RewriteBase /SwiftCargo/
+
+    # Route asset requests to public/assets/
+    RewriteRule ^assets/(.*)$ public/assets/$1 [L]
+
+    # Route empty request to public/
     RewriteRule ^$ public/ [L]
+
+    # Route all other URLs to the public directory router
     RewriteCond %{REQUEST_URI} !^/SwiftCargo/public/
-    RewriteRule ^(.*)$ public/$1 [L]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ public/$1 [L,QSA]
 </IfModule>
