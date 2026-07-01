@@ -22,5 +22,6 @@
     <?php require_once dirname(__DIR__) . '/components/flash.php'; ?>
     <?= $content ?? '' ?>
   </main>
+  <script src="/SwiftCargo/public/assets/js/app.js"></script>
 </body>
 </html>

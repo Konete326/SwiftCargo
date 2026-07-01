@@ -58,7 +58,7 @@ $badgeMap = [
             <td>
               <div class="d-flex gap-1">
                 <a href="/SwiftCargo/public/admin/shipments/edit/<?= $s['id'] ?>" class="btn btn-warning btn-sm">✏</a>
-                <a href="/SwiftCargo/public/admin/shipments/delete/<?= $s['id'] ?>" class="btn btn-danger btn-sm" id="delete-<?= $s['id'] ?>" onclick="return confirm('Delete this shipment?')">🗑</a>
+                <a href="/SwiftCargo/public/admin/shipments/delete/<?= $s['id'] ?>" class="btn btn-danger btn-sm" id="delete-<?= $s['id'] ?>" data-confirm="Delete this shipment? This cannot be undone.">🗑</a>
               </div>
             </td>
           </tr>

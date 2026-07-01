@@ -47,7 +47,7 @@ $pageSubtitle = 'Manage branch agents';
             <td>
               <div class="d-flex gap-1">
                 <a href="/SwiftCargo/public/admin/agents/edit/<?= $a['id'] ?>" class="btn btn-warning btn-sm">✏ Edit</a>
-                <a href="/SwiftCargo/public/admin/agents/delete/<?= $a['id'] ?>" class="btn btn-danger btn-sm" id="del-agent-<?= $a['id'] ?>" onclick="return confirm('Delete this agent?')">🗑</a>
+                <a href="/SwiftCargo/public/admin/agents/delete/<?= $a['id'] ?>" class="btn btn-danger btn-sm" id="del-agent-<?= $a['id'] ?>" data-confirm="Delete this agent? This cannot be undone.">🗑</a>
               </div>
             </td>
           </tr>

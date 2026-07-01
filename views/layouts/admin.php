@@ -28,5 +28,6 @@
     </main>
   </div>
 
+  <script src="/SwiftCargo/public/assets/js/app.js"></script>
 </body>
 </html>

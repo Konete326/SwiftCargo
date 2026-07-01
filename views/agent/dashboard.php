@@ -1,0 +1,64 @@
+<?php
+$pageTitle    = 'Agent Dashboard | SwiftCargo';
+$pageSubtitle = 'Branch shipment overview';
+
+$booked    = $counts['booked']            ?? 0;
+$transit   = $counts['in_transit']        ?? 0;
+$outDel    = $counts['out_for_delivery']  ?? 0;
+$delivered = $counts['delivered']         ?? 0;
+$cancelled = $counts['cancelled']         ?? 0;
+?>
+
+<div class="stats-grid">
+  <div class="stat-card amber">
+    <div class="stat-icon">🕐</div>
+    <div class="stat-info"><h3><?= $booked ?></h3><p>Booked</p></div>
+  </div>
+  <div class="stat-card cyan">
+    <div class="stat-icon">🚚</div>
+    <div class="stat-info"><h3><?= $transit ?></h3><p>In Transit</p></div>
+  </div>
+  <div class="stat-card blue">
+    <div class="stat-icon">🛵</div>
+    <div class="stat-info"><h3><?= $outDel ?></h3><p>Out for Delivery</p></div>
+  </div>
+  <div class="stat-card green">
+    <div class="stat-icon">✅</div>
+    <div class="stat-info"><h3><?= $delivered ?></h3><p>Delivered</p></div>
+  </div>
+  <div class="stat-card red">
+    <div class="stat-icon">❌</div>
+    <div class="stat-info"><h3><?= $cancelled ?></h3><p>Cancelled</p></div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <h3>📋 Recent Branch Shipments</h3>
+    <a href="/SwiftCargo/public/agent/shipments" class="btn btn-outline btn-sm">View All</a>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Tracking No</th><th>Sender</th><th>Receiver</th><th>Route</th><th>Status</th></tr>
+      </thead>
+      <tbody>
+        <?php if (empty($recentShipments)): ?>
+          <tr><td colspan="5"><div class="empty-state"><div class="icon">📭</div><p>No shipments yet</p></div></td></tr>
+        <?php else: ?>
+          <?php
+          $badgeMap = ['booked'=>'badge-warning','in_transit'=>'badge-info','out_for_delivery'=>'badge-primary','delivered'=>'badge-success','cancelled'=>'badge-danger'];
+          foreach ($recentShipments as $s): ?>
+          <tr>
+            <td><span style="font-family:monospace;font-weight:600;color:var(--primary-light);font-size:0.8rem;"><?= htmlspecialchars($s['tracking_number']) ?></span></td>
+            <td><?= htmlspecialchars($s['sender_name']) ?></td>
+            <td><?= htmlspecialchars($s['receiver_name']) ?></td>
+            <td style="font-size:0.82rem;"><?= htmlspecialchars($s['from_city']) ?> → <?= htmlspecialchars($s['to_city']) ?></td>
+            <td><span class="badge <?= $badgeMap[$s['status']] ?? 'badge-secondary' ?>"><?= str_replace('_', ' ', $s['status']) ?></span></td>
+          </tr>
+          <?php endforeach; ?>
+        <?php endif; ?>
+      </tbody>
+    </table>
+  </div>
+</div>

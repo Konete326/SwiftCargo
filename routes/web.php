@@ -53,4 +53,9 @@ $router->get('/user/track',                 [TrackController::class,    'showFor
 $router->post('/user/track',                [TrackController::class,    'track']);
 $router->get('/user/track/{tracking}',      [TrackController::class,    'result']);
 
+$router->get('/unauthorized', function () {
+    http_response_code(403);
+    require dirname(__DIR__) . '/views/errors/unauthorized.php';
+});
+
 return $router;

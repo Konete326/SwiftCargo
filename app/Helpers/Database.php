@@ -4,11 +4,13 @@ declare(strict_types=1);
 
 namespace app\Helpers;
 
+use PDO;
+
 final class Database
 {
     private static ?PDO $instance = null;
 
-    public static function connect(): \PDO
+    public static function connect(): PDO
     {
         if (self::$instance !== null) {
             return self::$instance;
@@ -24,7 +26,7 @@ final class Database
             $config['charset']
         );
 
-        self::$instance = new \PDO($dsn, $config['username'], $config['password'], $config['options']);
+        self::$instance = new PDO($dsn, $config['username'], $config['password'], $config['options']);
 
         return self::$instance;
     }
