@@ -1,0 +1,59 @@
+<?php
+use app\Helpers\Session;
+$currentUri  = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+$userName    = Session::get('user_name', 'Admin');
+$userInitial = strtoupper(substr($userName, 0, 1));
+
+function isActive(string $path, string $current): string {
+    return str_contains($current, $path) ? 'active' : '';
+}
+?>
+<aside class="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-wrap">
+      <div class="logo-icon">🚀</div>
+      <div>
+        <h2>SwiftCargo</h2>
+        <span>Management System</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="sidebar-role-badge">Admin Panel</div>
+
+  <nav class="sidebar-nav">
+    <div class="nav-section-label">Overview</div>
+    <a href="/SwiftCargo/public/admin/dashboard" class="nav-item <?= isActive('dashboard', $currentUri) ?>">
+      <span class="nav-icon">📊</span> Dashboard
+    </a>
+
+    <div class="nav-section-label">Shipments</div>
+    <a href="/SwiftCargo/public/admin/shipments" class="nav-item <?= isActive('shipments', $currentUri) ?>">
+      <span class="nav-icon">📦</span> All Shipments
+    </a>
+    <a href="/SwiftCargo/public/admin/shipments/create" class="nav-item">
+      <span class="nav-icon">➕</span> New Shipment
+    </a>
+
+    <div class="nav-section-label">Management</div>
+    <a href="/SwiftCargo/public/admin/agents" class="nav-item <?= isActive('agents', $currentUri) ?>">
+      <span class="nav-icon">👤</span> Agents
+    </a>
+    <a href="/SwiftCargo/public/admin/customers" class="nav-item <?= isActive('customers', $currentUri) ?>">
+      <span class="nav-icon">👥</span> Customers
+    </a>
+    <a href="/SwiftCargo/public/admin/reports" class="nav-item <?= isActive('reports', $currentUri) ?>">
+      <span class="nav-icon">📈</span> Reports
+    </a>
+  </nav>
+
+  <div class="sidebar-footer">
+    <div class="user-card">
+      <div class="user-avatar"><?= $userInitial ?></div>
+      <div class="user-info">
+        <strong><?= htmlspecialchars($userName) ?></strong>
+        <span>Administrator</span>
+      </div>
+    </div>
+  </div>
+</aside>

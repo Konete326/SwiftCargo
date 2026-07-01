@@ -1,0 +1,87 @@
+Courier Management System
+Table of Contents
+Introduction ……………………………………………………………………………...02
+Proposed Scenario …………………………………………………………………….02
+System Module ………………………………………………………………………….03
+Module Description ……………………………………………………………………04
+Introduction:
+Courier management system is currently handled manually by the organisation and facing 
+various challenges in maintaining records and providing information to it’s customers. 
+Tracking and handling of couriers is becoming tedious for the organisation.
+Proposed Solution:
+Courier management system is a management software designed by considering various 
+factors in courier billing system. The proposed web app will help to manage customer 
+information, package details, generate reports, app billing.  Courier management web 
+application will be a comprehensive and complete application will be able to manage all its 
+operations and also the tracking and manage delivery info all registered consignments or 
+packages, manage customer related information. The web app provide necessary info of 
+status. Admin will update the details of both sender and receiver include status of booked 
+package or consignment. User can tracking the courier through online site.
+System Modules:
+Admin
+● Login
+● Newcourier
+● Viewallcourier details
+● SendSMS–Fromto
+● SenddeliverySMS
+● Update/deletecourier
+● Createagent
+● Manageagent
+● Managecustomerdetails
+● Statuscount
+● Downloadreportfor shipment
+Agent
+● Login
+● Newcourier
+● Viewallcourier details
+● SendSMSFromto
+● SenddeliverySMS
+● Statusofbranch
+● Downloadreportfrombranch
+User
+● Register
+● Login
+● Trackconsignmentnumber
+● Viewstatus
+● Printstatus
+Module Description
+● AdminLogin
+oAdmin will have his/her own login details (username, password) to access the 
+system
+● CreateBill–Admin, Agent
+oAdmin can create a Courier Bill after logging in. Bills contain the details of sender, 
+receiver, courier type, delivery date and Courier Company.
+● Updatebill–Admin, Agent
+oThey can also update the Bill with the entries and if there is any modification. Agent 
+can view the list of details of his location only.
+● ManageCustomerdetails
+oAdmin can manage all the Customer Details in a separate and secured Database
+● Reporting
+oReports of all the Bill can be viewed by the admin of the system
+● Logout
+oAt last they can logout if they have done with their actions on the database.
+● Admin&AgentDashboard
+oStatus Counts
+●View total status count for shipment, in progress, delivered.
+●Admin will view all location status counts.
+●Agent can view only from or to location of his branch.
+oAdd Shipment
+●NewCourier
+oManage Shipment
+oPrint Shipment
+●User can print tracking details
+oDownload Report (XLSX)
+●Date Wise
+●City Wise
+● AdminDashboard
+oAdd Agent
+●Can view only “from or to” location
+oCreate Agent city wise login
+oManage Customer
+●Search
+● UserLogin
+oTrack Shipment
+●User can search using consignment tracking details
+oShipment status
+oPrint
+●User can print tracking details
