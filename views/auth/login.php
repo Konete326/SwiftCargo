@@ -1,11 +1,11 @@
-<?php
+﻿<?php
 $pageTitle = 'Login | SwiftCargo';
 ?>
 <div class="auth-tabs">
   <button class="auth-tab active" id="tab-btn">Login</button>
 </div>
 
-<form method="POST" action="/SwiftCargo/public/login" id="login-form">
+<form method="POST" action="/SwiftCargo/login" id="login-form">
   <div class="form-group">
     <label class="form-label" for="role">Login As</label>
     <select name="role" id="role" class="form-control">
@@ -22,15 +22,16 @@ $pageTitle = 'Login | SwiftCargo';
 
   <div class="form-group">
     <label class="form-label" for="password">Password</label>
-    <input type="password" name="password" id="password" class="form-control" placeholder="••••••••" required>
+    <input type="password" name="password" id="password" class="form-control" placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢" required>
   </div>
 
   <button type="submit" class="btn btn-primary btn-full btn-lg" id="login-btn">
-    🔐 Sign In
+    ðŸ” Sign In
   </button>
 </form>
 
 <p style="text-align:center; margin-top:1.25rem; font-size:0.85rem; color:var(--text-muted);">
   Don't have an account?
-  <a href="/SwiftCargo/public/register" style="color:var(--primary-light); font-weight:600;">Register here</a>
+  <a href="/SwiftCargo/register" style="color:var(--primary-light); font-weight:600;">Register here</a>
 </p>
+

@@ -1,15 +1,15 @@
-<?php
+﻿<?php
 $pageTitle    = 'Edit Agent | SwiftCargo';
 $pageSubtitle = 'Update agent details';
 ?>
 
 <div class="page-header">
   <div><h2>Edit Agent</h2><p><?= htmlspecialchars($agent['name']) ?></p></div>
-  <a href="/SwiftCargo/public/admin/agents" class="btn btn-outline">← Back</a>
+  <a href="/SwiftCargo/admin/agents" class="btn btn-outline">â† Back</a>
 </div>
 
 <div class="form-card">
-  <form method="POST" action="/SwiftCargo/public/admin/agents/update/<?= $agent['id'] ?>" id="edit-agent-form">
+  <form method="POST" action="/SwiftCargo/admin/agents/update/<?= $agent['id'] ?>" id="edit-agent-form">
 
     <div class="form-row">
       <div class="form-group">
@@ -39,9 +39,10 @@ $pageSubtitle = 'Update agent details';
     </div>
 
     <div style="display:flex;gap:1rem;margin-top:0.5rem;">
-      <button type="submit" class="btn btn-primary btn-lg" id="btn-update-agent">💾 Update Agent</button>
-      <a href="/SwiftCargo/public/admin/agents" class="btn btn-outline btn-lg">Cancel</a>
+      <button type="submit" class="btn btn-primary btn-lg" id="btn-update-agent">ðŸ’¾ Update Agent</button>
+      <a href="/SwiftCargo/admin/agents" class="btn btn-outline btn-lg">Cancel</a>
     </div>
 
   </form>
 </div>
+

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 $pageTitle = 'Tracking Result | SwiftCargo';
 
 $badgeMap = [
@@ -25,25 +25,25 @@ $statusLabel = ucwords(str_replace('_', ' ', $shipment['status']));
 
 <div style="max-width:680px;margin:2rem auto;">
   <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:0.75rem;">
-    <a href="/SwiftCargo/public/user/track" class="btn btn-outline btn-sm">← Track Another</a>
-    <button onclick="window.print()" class="btn btn-info btn-sm" id="btn-print">🖨 Print</button>
+    <a href="/SwiftCargo/user/track" class="btn btn-outline btn-sm">â† Track Another</a>
+    <button onclick="window.print()" class="btn btn-info btn-sm" id="btn-print">ðŸ–¨ Print</button>
   </div>
 
   <div class="track-result">
     <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.75rem;margin-bottom:1.5rem;">
-      <div class="track-number">📦 <?= htmlspecialchars($shipment['tracking_number']) ?></div>
+      <div class="track-number">ðŸ“¦ <?= htmlspecialchars($shipment['tracking_number']) ?></div>
       <span class="badge <?= $badge ?>" style="font-size:0.85rem;padding:0.4rem 1rem;"><?= $statusLabel ?></span>
     </div>
 
     <div class="track-route">
       <div class="track-city">
-        <span style="font-size:1.5rem;">📤</span>
+        <span style="font-size:1.5rem;">ðŸ“¤</span>
         <strong><?= htmlspecialchars($shipment['from_city']) ?></strong>
         <span>Sender</span>
       </div>
-      <div class="track-arrow">✈ ────</div>
+      <div class="track-arrow">âœˆ â”€â”€â”€â”€</div>
       <div class="track-city">
-        <span style="font-size:1.5rem;">📥</span>
+        <span style="font-size:1.5rem;">ðŸ“¥</span>
         <strong><?= htmlspecialchars($shipment['to_city']) ?></strong>
         <span>Receiver</span>
       </div>
@@ -91,3 +91,4 @@ $statusLabel = ucwords(str_replace('_', ' ', $shipment['status']));
     </div>
   </div>
 </div>
+

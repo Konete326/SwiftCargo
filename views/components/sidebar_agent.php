@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 use app\Helpers\Session;
 $currentUri  = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $userName    = Session::get('user_name', 'Agent');
@@ -13,7 +13,7 @@ if (!function_exists('isActiveAgent')) {
 <aside class="sidebar">
   <div class="sidebar-logo">
     <div class="logo-wrap">
-      <div class="logo-icon"><img src="/SwiftCargo/public/assets/images/logo.png" alt="Logo" style="width:100%;height:100%;object-fit:contain;border-radius:inherit;"></div>
+      <div class="logo-icon"><img src="/SwiftCargo/assets/images/logo.png" alt="Logo" style="width:100%;height:100%;object-fit:contain;border-radius:inherit;"></div>
       <div>
         <h2>SwiftCargo</h2>
         <span>Management System</span>
@@ -25,21 +25,21 @@ if (!function_exists('isActiveAgent')) {
 
   <nav class="sidebar-nav">
     <div class="nav-section-label">Overview</div>
-    <a href="/SwiftCargo/public/agent/dashboard" class="nav-item <?= isActiveAgent('dashboard', $currentUri) ?>">
-      <span class="nav-icon">📊</span> Dashboard
+    <a href="/SwiftCargo/agent/dashboard" class="nav-item <?= isActiveAgent('dashboard', $currentUri) ?>">
+      <span class="nav-icon">ðŸ“Š</span> Dashboard
     </a>
 
     <div class="nav-section-label">Shipments</div>
-    <a href="/SwiftCargo/public/agent/shipments" class="nav-item <?= isActiveAgent('shipments', $currentUri) ?>">
-      <span class="nav-icon">📦</span> Branch Shipments
+    <a href="/SwiftCargo/agent/shipments" class="nav-item <?= isActiveAgent('shipments', $currentUri) ?>">
+      <span class="nav-icon">ðŸ“¦</span> Branch Shipments
     </a>
-    <a href="/SwiftCargo/public/agent/shipments/create" class="nav-item">
-      <span class="nav-icon">➕</span> New Shipment
+    <a href="/SwiftCargo/agent/shipments/create" class="nav-item">
+      <span class="nav-icon">âž•</span> New Shipment
     </a>
 
     <div class="nav-section-label">Reports</div>
-    <a href="/SwiftCargo/public/agent/reports" class="nav-item <?= isActiveAgent('reports', $currentUri) ?>">
-      <span class="nav-icon">📈</span> Branch Reports
+    <a href="/SwiftCargo/agent/reports" class="nav-item <?= isActiveAgent('reports', $currentUri) ?>">
+      <span class="nav-icon">ðŸ“ˆ</span> Branch Reports
     </a>
   </nav>
 
@@ -53,3 +53,4 @@ if (!function_exists('isActiveAgent')) {
     </div>
   </div>
 </aside>
+

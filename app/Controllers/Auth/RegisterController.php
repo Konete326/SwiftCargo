@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 declare(strict_types=1);
 
@@ -33,27 +33,28 @@ class RegisterController extends BaseController
 
         if (empty($name) || empty($email) || empty($phone) || empty($password)) {
             $this->flashError('All fields are required.');
-            $this->redirect('/SwiftCargo/public/register');
+            $this->redirect('/SwiftCargo/register');
         }
 
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $this->flashError('Invalid email address.');
-            $this->redirect('/SwiftCargo/public/register');
+            $this->redirect('/SwiftCargo/register');
         }
 
         if ($password !== $confirm) {
             $this->flashError('Passwords do not match.');
-            $this->redirect('/SwiftCargo/public/register');
+            $this->redirect('/SwiftCargo/register');
         }
 
         if ($this->users->findByEmail($email)) {
             $this->flashError('Email already registered.');
-            $this->redirect('/SwiftCargo/public/register');
+            $this->redirect('/SwiftCargo/register');
         }
 
         $this->users->create($name, $email, $password, $phone);
 
         $this->flashSuccess('Registration successful. Please login.');
-        $this->redirect('/SwiftCargo/public/login');
+        $this->redirect('/SwiftCargo/login');
     }
 }
+

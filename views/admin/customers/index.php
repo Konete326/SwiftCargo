@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 $pageTitle    = 'Customers | SwiftCargo';
 $pageSubtitle = 'Registered customer accounts';
 ?>
@@ -12,11 +12,11 @@ $pageSubtitle = 'Registered customer accounts';
 
 <div class="card" style="margin-bottom:1.25rem;">
   <div class="card-body">
-    <form method="GET" action="/SwiftCargo/public/admin/customers" id="search-form" style="display:flex;gap:0.75rem;">
+    <form method="GET" action="/SwiftCargo/admin/customers" id="search-form" style="display:flex;gap:0.75rem;">
       <input type="text" name="q" class="form-control" placeholder="Search by name, email or phone..." value="<?= htmlspecialchars($query) ?>" style="flex:1;">
-      <button type="submit" class="btn btn-primary" id="btn-search">🔍 Search</button>
+      <button type="submit" class="btn btn-primary" id="btn-search">ðŸ” Search</button>
       <?php if ($query): ?>
-        <a href="/SwiftCargo/public/admin/customers" class="btn btn-outline">✕ Clear</a>
+        <a href="/SwiftCargo/admin/customers" class="btn btn-outline">âœ• Clear</a>
       <?php endif; ?>
     </form>
   </div>
@@ -36,7 +36,7 @@ $pageSubtitle = 'Registered customer accounts';
       </thead>
       <tbody>
         <?php if (empty($customers)): ?>
-          <tr><td colspan="5"><div class="empty-state"><div class="icon">👥</div><p><?= $query ? 'No results for "' . htmlspecialchars($query) . '"' : 'No customers yet' ?></p></div></td></tr>
+          <tr><td colspan="5"><div class="empty-state"><div class="icon">ðŸ‘¥</div><p><?= $query ? 'No results for "' . htmlspecialchars($query) . '"' : 'No customers yet' ?></p></div></td></tr>
         <?php else: ?>
           <?php foreach ($customers as $i => $c): ?>
           <tr>
@@ -59,3 +59,4 @@ $pageSubtitle = 'Registered customer accounts';
     </table>
   </div>
 </div>
+

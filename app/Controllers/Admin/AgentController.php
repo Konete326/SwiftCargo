@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 declare(strict_types=1);
 
@@ -46,12 +46,12 @@ class AgentController extends BaseController
 
         if ($this->agents->findByEmail($email)) {
             $this->flashError('Agent with this email already exists.');
-            $this->redirect('/SwiftCargo/public/admin/agents/create');
+            $this->redirect('/SwiftCargo/admin/agents/create');
         }
 
         $this->agents->create($name, $email, $password, $cityId, $phone);
         $this->flashSuccess('Agent created successfully.');
-        $this->redirect('/SwiftCargo/public/admin/agents');
+        $this->redirect('/SwiftCargo/admin/agents');
     }
 
     public function edit(string $id): void
@@ -73,7 +73,7 @@ class AgentController extends BaseController
 
         $this->agents->update((int) $id, $name, $email, $phone, $cityId);
         $this->flashSuccess('Agent updated.');
-        $this->redirect('/SwiftCargo/public/admin/agents');
+        $this->redirect('/SwiftCargo/admin/agents');
     }
 
     public function delete(string $id): void
@@ -81,6 +81,7 @@ class AgentController extends BaseController
         AuthMiddleware::requireAdmin();
         $this->agents->delete((int) $id);
         $this->flashSuccess('Agent deleted.');
-        $this->redirect('/SwiftCargo/public/admin/agents');
+        $this->redirect('/SwiftCargo/admin/agents');
     }
 }
+

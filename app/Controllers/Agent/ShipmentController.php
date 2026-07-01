@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 declare(strict_types=1);
 
@@ -57,7 +57,7 @@ class ShipmentController extends BaseController
 
         $this->shipments->create($data);
         $this->flashSuccess("Shipment created. [SMS simulated to Sender ({$data['sender_phone']}) & Receiver ({$data['receiver_phone']}): Shipment {$data['tracking_number']} booked]");
-        $this->redirect('/SwiftCargo/public/agent/shipments');
+        $this->redirect('/SwiftCargo/agent/shipments');
     }
 
     public function edit(string $id): void
@@ -86,6 +86,7 @@ class ShipmentController extends BaseController
         } else {
             $this->flashSuccess('Status updated.');
         }
-        $this->redirect('/SwiftCargo/public/agent/shipments');
+        $this->redirect('/SwiftCargo/agent/shipments');
     }
 }
+

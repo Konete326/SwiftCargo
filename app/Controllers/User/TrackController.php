@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 declare(strict_types=1);
 
@@ -31,10 +31,10 @@ class TrackController extends BaseController
 
         if (empty($trackingNumber)) {
             $this->flashError('Please enter a tracking number.');
-            $this->redirect('/SwiftCargo/public/user/track');
+            $this->redirect('/SwiftCargo/user/track');
         }
 
-        $this->redirect('/SwiftCargo/public/user/track/' . urlencode($trackingNumber));
+        $this->redirect('/SwiftCargo/user/track/' . urlencode($trackingNumber));
     }
 
     public function result(string $tracking): void
@@ -45,9 +45,10 @@ class TrackController extends BaseController
 
         if (!$shipment) {
             $this->flashError('No shipment found with that tracking number.');
-            $this->redirect('/SwiftCargo/public/user/track');
+            $this->redirect('/SwiftCargo/user/track');
         }
 
         $this->view('user/track_result', compact('shipment'), 'user');
     }
 }
+

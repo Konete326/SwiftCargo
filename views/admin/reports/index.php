@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 $pageTitle    = 'Reports | SwiftCargo';
 $pageSubtitle = 'Download shipment reports';
 ?>
@@ -10,8 +10,8 @@ $pageSubtitle = 'Download shipment reports';
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
 
   <div class="form-card">
-    <h3 style="font-size:1rem;font-weight:700;margin-bottom:1.25rem;color:var(--primary-light);">📅 Date-Wise Report</h3>
-    <form method="POST" action="/SwiftCargo/public/admin/reports/download" id="report-date-form">
+    <h3 style="font-size:1rem;font-weight:700;margin-bottom:1.25rem;color:var(--primary-light);">ðŸ“… Date-Wise Report</h3>
+    <form method="POST" action="/SwiftCargo/admin/reports/download" id="report-date-form">
       <input type="hidden" name="type" value="date">
       <div class="form-group">
         <label class="form-label" for="from">From Date</label>
@@ -21,13 +21,13 @@ $pageSubtitle = 'Download shipment reports';
         <label class="form-label" for="to">To Date</label>
         <input type="date" name="to" id="to" class="form-control" required>
       </div>
-      <button type="submit" class="btn btn-primary btn-full" id="btn-download-date">⬇ Download CSV</button>
+      <button type="submit" class="btn btn-primary btn-full" id="btn-download-date">â¬‡ Download CSV</button>
     </form>
   </div>
 
   <div class="form-card">
-    <h3 style="font-size:1rem;font-weight:700;margin-bottom:1.25rem;color:var(--accent);">🏙 City-Wise Report</h3>
-    <form method="POST" action="/SwiftCargo/public/admin/reports/download" id="report-city-form">
+    <h3 style="font-size:1rem;font-weight:700;margin-bottom:1.25rem;color:var(--accent);">ðŸ™ City-Wise Report</h3>
+    <form method="POST" action="/SwiftCargo/admin/reports/download" id="report-city-form">
       <input type="hidden" name="type" value="city">
       <div class="form-group">
         <label class="form-label" for="city_id">Select City</label>
@@ -39,9 +39,10 @@ $pageSubtitle = 'Download shipment reports';
         </select>
       </div>
       <div style="margin-top:1.3rem;">
-        <button type="submit" class="btn btn-success btn-full" id="btn-download-city">⬇ Download CSV</button>
+        <button type="submit" class="btn btn-success btn-full" id="btn-download-city">â¬‡ Download CSV</button>
       </div>
     </form>
   </div>
 
 </div>
+

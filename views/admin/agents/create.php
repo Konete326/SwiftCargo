@@ -1,15 +1,15 @@
-<?php
+﻿<?php
 $pageTitle    = 'Add Agent | SwiftCargo';
 $pageSubtitle = 'Create a new branch agent';
 ?>
 
 <div class="page-header">
   <div><h2>Add Agent</h2><p>Create a city-wise branch agent login</p></div>
-  <a href="/SwiftCargo/public/admin/agents" class="btn btn-outline">← Back</a>
+  <a href="/SwiftCargo/admin/agents" class="btn btn-outline">â† Back</a>
 </div>
 
 <div class="form-card">
-  <form method="POST" action="/SwiftCargo/public/admin/agents/store" id="create-agent-form">
+  <form method="POST" action="/SwiftCargo/admin/agents/store" id="create-agent-form">
 
     <div class="form-row">
       <div class="form-group">
@@ -49,9 +49,10 @@ $pageSubtitle = 'Create a new branch agent';
     </div>
 
     <div style="display:flex;gap:1rem;margin-top:0.5rem;">
-      <button type="submit" class="btn btn-primary btn-lg" id="btn-save-agent">👤 Create Agent</button>
-      <a href="/SwiftCargo/public/admin/agents" class="btn btn-outline btn-lg">Cancel</a>
+      <button type="submit" class="btn btn-primary btn-lg" id="btn-save-agent">ðŸ‘¤ Create Agent</button>
+      <a href="/SwiftCargo/admin/agents" class="btn btn-outline btn-lg">Cancel</a>
     </div>
 
   </form>
 </div>
+

@@ -23,8 +23,13 @@ if ($config['debug']) {
 $router = require ROOT . '/routes/web.php';
 
 $uri    = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-$base   = '/SwiftCargo/public';
-$uri    = str_starts_with($uri, $base) ? substr($uri, strlen($base)) : $uri;
+$basePublic = '/SwiftCargo/public';
+$baseRoot   = '/SwiftCargo';
+if (str_starts_with($uri, $basePublic)) {
+    $uri = substr($uri, strlen($basePublic));
+} elseif (str_starts_with($uri, $baseRoot)) {
+    $uri = substr($uri, strlen($baseRoot));
+}
 $uri    = '/' . ltrim($uri, '/');
 $method = $_SERVER['REQUEST_METHOD'];
 

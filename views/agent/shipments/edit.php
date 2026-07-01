@@ -1,8 +1,8 @@
-<?php $pageTitle = 'Update Status | SwiftCargo'; ?>
+﻿<?php $pageTitle = 'Update Status | SwiftCargo'; ?>
 
 <div class="page-header">
   <div><h2>Update Shipment</h2><p style="font-family:monospace;color:var(--primary-light);"><?= htmlspecialchars($shipment['tracking_number']) ?></p></div>
-  <a href="/SwiftCargo/public/agent/shipments" class="btn btn-outline">← Back</a>
+  <a href="/SwiftCargo/agent/shipments" class="btn btn-outline">â† Back</a>
 </div>
 
 <div class="form-card">
@@ -11,7 +11,7 @@
     <div><p style="font-size:0.72rem;color:var(--text-dim);text-transform:uppercase;">Receiver</p><p style="font-weight:600;"><?= htmlspecialchars($shipment['receiver_name']) ?></p><p style="font-size:0.8rem;color:var(--text-muted);"><?= htmlspecialchars($shipment['receiver_phone']) ?></p></div>
   </div>
 
-  <form method="POST" action="/SwiftCargo/public/agent/shipments/update/<?= $shipment['id'] ?>" id="agent-update-form">
+  <form method="POST" action="/SwiftCargo/agent/shipments/update/<?= $shipment['id'] ?>" id="agent-update-form">
     <div class="form-group">
       <label class="form-label" for="status">Shipment Status</label>
       <select name="status" id="status" class="form-control" required>
@@ -23,8 +23,9 @@
       </select>
     </div>
     <div style="display:flex;gap:1rem;margin-top:0.5rem;">
-      <button type="submit" class="btn btn-primary btn-lg" id="btn-agent-update">💾 Update Status</button>
-      <a href="/SwiftCargo/public/agent/shipments" class="btn btn-outline btn-lg">Cancel</a>
+      <button type="submit" class="btn btn-primary btn-lg" id="btn-agent-update">ðŸ’¾ Update Status</button>
+      <a href="/SwiftCargo/agent/shipments" class="btn btn-outline btn-lg">Cancel</a>
     </div>
   </form>
 </div>
+

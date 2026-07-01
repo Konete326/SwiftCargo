@@ -15,7 +15,7 @@ DB_DATABASE=swiftcargo
 
 **3. Open Browser**
 ```
-http://localhost/SwiftCargo/public/login
+http://localhost/SwiftCargo/login
 ```
 
 ---

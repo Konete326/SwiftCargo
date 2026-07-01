@@ -1,16 +1,17 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>404 - Page Not Found | SwiftCargo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/SwiftCargo/public/assets/css/app.css">
+    <link rel="stylesheet" href="/SwiftCargo/assets/css/app.css">
 </head>
 <body class="error-page">
     <div class="error-container">
         <h1>404</h1>
         <p>The page you are looking for does not exist.</p>
-        <a href="/SwiftCargo/public/login" class="btn btn-primary">Go Home</a>
+        <a href="/SwiftCargo/login" class="btn btn-primary">Go Home</a>
     </div>
 </body>
 </html>
+

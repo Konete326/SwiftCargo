@@ -1,6 +1,6 @@
-<?php $pageTitle = 'Register | SwiftCargo'; ?>
+﻿<?php $pageTitle = 'Register | SwiftCargo'; ?>
 
-<form method="POST" action="/SwiftCargo/public/register" id="register-form">
+<form method="POST" action="/SwiftCargo/register" id="register-form">
   <div class="form-group">
     <label class="form-label" for="name">Full Name</label>
     <input type="text" name="name" id="name" class="form-control" placeholder="John Doe" required>
@@ -23,15 +23,16 @@
 
   <div class="form-group">
     <label class="form-label" for="confirm_password">Confirm Password</label>
-    <input type="password" name="confirm_password" id="confirm_password" class="form-control" placeholder="••••••••" required>
+    <input type="password" name="confirm_password" id="confirm_password" class="form-control" placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢" required>
   </div>
 
   <button type="submit" class="btn btn-primary btn-full btn-lg" id="register-btn">
-    ✅ Create Account
+    âœ… Create Account
   </button>
 </form>
 
 <p style="text-align:center; margin-top:1.25rem; font-size:0.85rem; color:var(--text-muted);">
   Already have an account?
-  <a href="/SwiftCargo/public/login" style="color:var(--primary-light); font-weight:600;">Sign in</a>
+  <a href="/SwiftCargo/login" style="color:var(--primary-light); font-weight:600;">Sign in</a>
 </p>
+

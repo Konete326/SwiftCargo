@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 $pageTitle    = 'All Shipments | SwiftCargo';
 $pageSubtitle = 'Manage all courier shipments';
 
@@ -16,7 +16,7 @@ $badgeMap = [
     <h2>All Shipments</h2>
     <p>Total: <?= count($shipments) ?> records</p>
   </div>
-  <a href="/SwiftCargo/public/admin/shipments/create" class="btn btn-primary" id="btn-new-shipment">➕ New Shipment</a>
+  <a href="/SwiftCargo/admin/shipments/create" class="btn btn-primary" id="btn-new-shipment">âž• New Shipment</a>
 </div>
 
 <div class="card">
@@ -37,7 +37,7 @@ $badgeMap = [
       </thead>
       <tbody>
         <?php if (empty($shipments)): ?>
-          <tr><td colspan="9"><div class="empty-state"><div class="icon">📭</div><p>No shipments found</p></div></td></tr>
+          <tr><td colspan="9"><div class="empty-state"><div class="icon">ðŸ“­</div><p>No shipments found</p></div></td></tr>
         <?php else: ?>
           <?php foreach ($shipments as $s): ?>
           <tr>
@@ -50,15 +50,15 @@ $badgeMap = [
               <div style="font-weight:600;"><?= htmlspecialchars($s['receiver_name']) ?></div>
               <div style="font-size:0.75rem;color:var(--text-muted);"><?= htmlspecialchars($s['receiver_phone']) ?></div>
             </td>
-            <td style="font-size:0.82rem;"><?= htmlspecialchars($s['from_city']) ?> → <?= htmlspecialchars($s['to_city']) ?></td>
+            <td style="font-size:0.82rem;"><?= htmlspecialchars($s['from_city']) ?> â†’ <?= htmlspecialchars($s['to_city']) ?></td>
             <td><span style="font-size:0.8rem;"><?= htmlspecialchars(ucfirst($s['courier_type'])) ?></span></td>
             <td style="font-weight:600;">Rs. <?= number_format($s['amount'], 0) ?></td>
             <td><span class="badge <?= $badgeMap[$s['status']] ?? 'badge-secondary' ?>"><?= str_replace('_', ' ', $s['status']) ?></span></td>
             <td style="color:var(--text-muted);font-size:0.78rem;"><?= date('M d, Y', strtotime($s['created_at'])) ?></td>
             <td>
               <div class="d-flex gap-1">
-                <a href="/SwiftCargo/public/admin/shipments/edit/<?= $s['id'] ?>" class="btn btn-warning btn-sm">✏</a>
-                <a href="/SwiftCargo/public/admin/shipments/delete/<?= $s['id'] ?>" class="btn btn-danger btn-sm" id="delete-<?= $s['id'] ?>" data-confirm="Delete this shipment? This cannot be undone.">🗑</a>
+                <a href="/SwiftCargo/admin/shipments/edit/<?= $s['id'] ?>" class="btn btn-warning btn-sm">âœ</a>
+                <a href="/SwiftCargo/admin/shipments/delete/<?= $s['id'] ?>" class="btn btn-danger btn-sm" id="delete-<?= $s['id'] ?>" data-confirm="Delete this shipment? This cannot be undone.">ðŸ—‘</a>
               </div>
             </td>
           </tr>
@@ -68,3 +68,4 @@ $badgeMap = [
     </table>
   </div>
 </div>
+

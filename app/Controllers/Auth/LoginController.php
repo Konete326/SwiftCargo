@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 declare(strict_types=1);
 
@@ -34,7 +34,7 @@ class LoginController extends BaseController
 
         if (empty($email) || empty($password)) {
             $this->flashError('Email and password are required.');
-            $this->redirect('/SwiftCargo/public/login');
+            $this->redirect('/SwiftCargo/login');
         }
 
         $account = match($role) {
@@ -45,12 +45,12 @@ class LoginController extends BaseController
 
         if (!$account || !password_verify($password, $account['password'])) {
             $this->flashError('Invalid credentials.');
-            $this->redirect('/SwiftCargo/public/login');
+            $this->redirect('/SwiftCargo/login');
         }
 
         if ($role === 'admin' && $account['role'] !== 'admin') {
             $this->flashError('Access denied.');
-            $this->redirect('/SwiftCargo/public/login');
+            $this->redirect('/SwiftCargo/login');
         }
 
         Session::start();
@@ -62,13 +62,14 @@ class LoginController extends BaseController
             Session::set('agent_city_id', $account['city_id']);
         }
 
-        $this->redirect("/SwiftCargo/public/{$role}/dashboard");
+        $this->redirect("/SwiftCargo/{$role}/dashboard");
     }
 
     public function logout(): void
     {
         Session::start();
         Session::destroy();
-        $this->redirect('/SwiftCargo/public/login');
+        $this->redirect('/SwiftCargo/login');
     }
 }
+

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 declare(strict_types=1);
 
@@ -12,7 +12,7 @@ class AuthMiddleware
     {
         Session::start();
         if (!Session::has('user_id')) {
-            header('Location: /SwiftCargo/public/login');
+            header('Location: /SwiftCargo/login');
             exit;
         }
     }
@@ -21,7 +21,7 @@ class AuthMiddleware
     {
         self::requireLogin();
         if (Session::get('user_role') !== $role) {
-            header('Location: /SwiftCargo/public/unauthorized');
+            header('Location: /SwiftCargo/unauthorized');
             exit;
         }
     }
@@ -41,8 +41,9 @@ class AuthMiddleware
         Session::start();
         if (Session::has('user_id')) {
             $role = Session::get('user_role');
-            header("Location: /SwiftCargo/public/{$role}/dashboard");
+            header("Location: /SwiftCargo/{$role}/dashboard");
             exit;
         }
     }
 }
+

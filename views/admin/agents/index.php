@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 $pageTitle    = 'Agents | SwiftCargo';
 $pageSubtitle = 'Manage branch agents';
 ?>
@@ -8,7 +8,7 @@ $pageSubtitle = 'Manage branch agents';
     <h2>Agents</h2>
     <p>Total: <?= count($agents) ?> agents</p>
   </div>
-  <a href="/SwiftCargo/public/admin/agents/create" class="btn btn-primary" id="btn-new-agent">➕ Add Agent</a>
+  <a href="/SwiftCargo/admin/agents/create" class="btn btn-primary" id="btn-new-agent">âž• Add Agent</a>
 </div>
 
 <div class="card">
@@ -27,7 +27,7 @@ $pageSubtitle = 'Manage branch agents';
       </thead>
       <tbody>
         <?php if (empty($agents)): ?>
-          <tr><td colspan="7"><div class="empty-state"><div class="icon">👤</div><p>No agents found</p></div></td></tr>
+          <tr><td colspan="7"><div class="empty-state"><div class="icon">ðŸ‘¤</div><p>No agents found</p></div></td></tr>
         <?php else: ?>
           <?php foreach ($agents as $i => $a): ?>
           <tr>
@@ -46,8 +46,8 @@ $pageSubtitle = 'Manage branch agents';
             <td style="color:var(--text-muted);font-size:0.78rem;"><?= date('M d, Y', strtotime($a['created_at'])) ?></td>
             <td>
               <div class="d-flex gap-1">
-                <a href="/SwiftCargo/public/admin/agents/edit/<?= $a['id'] ?>" class="btn btn-warning btn-sm">✏ Edit</a>
-                <a href="/SwiftCargo/public/admin/agents/delete/<?= $a['id'] ?>" class="btn btn-danger btn-sm" id="del-agent-<?= $a['id'] ?>" data-confirm="Delete this agent? This cannot be undone.">🗑</a>
+                <a href="/SwiftCargo/admin/agents/edit/<?= $a['id'] ?>" class="btn btn-warning btn-sm">âœ Edit</a>
+                <a href="/SwiftCargo/admin/agents/delete/<?= $a['id'] ?>" class="btn btn-danger btn-sm" id="del-agent-<?= $a['id'] ?>" data-confirm="Delete this agent? This cannot be undone.">ðŸ—‘</a>
               </div>
             </td>
           </tr>
@@ -57,3 +57,4 @@ $pageSubtitle = 'Manage branch agents';
     </table>
   </div>
 </div>
+

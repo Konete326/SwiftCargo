@@ -1,14 +1,14 @@
-<?php $pageTitle = 'New Shipment | SwiftCargo'; $pageSubtitle = 'Create branch shipment'; ?>
+﻿<?php $pageTitle = 'New Shipment | SwiftCargo'; $pageSubtitle = 'Create branch shipment'; ?>
 
 <div class="page-header">
   <div><h2>New Shipment</h2><p>Create a new courier booking</p></div>
-  <a href="/SwiftCargo/public/agent/shipments" class="btn btn-outline">← Back</a>
+  <a href="/SwiftCargo/agent/shipments" class="btn btn-outline">â† Back</a>
 </div>
 
 <div class="form-card">
-  <form method="POST" action="/SwiftCargo/public/agent/shipments/store" id="agent-create-shipment">
+  <form method="POST" action="/SwiftCargo/agent/shipments/store" id="agent-create-shipment">
 
-    <p style="font-size:0.8rem;font-weight:700;color:var(--primary-light);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:1rem;">📤 Sender Details</p>
+    <p style="font-size:0.8rem;font-weight:700;color:var(--primary-light);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:1rem;">ðŸ“¤ Sender Details</p>
     <div class="form-row">
       <div class="form-group"><label class="form-label" for="sender_name">Sender Name</label><input type="text" name="sender_name" id="sender_name" class="form-control" required></div>
       <div class="form-group"><label class="form-label" for="sender_phone">Sender Phone</label><input type="text" name="sender_phone" id="sender_phone" class="form-control" required></div>
@@ -22,7 +22,7 @@
     </div>
 
     <hr style="border:none;border-top:1px solid var(--border);margin:1.5rem 0;">
-    <p style="font-size:0.8rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:1rem;">📥 Receiver Details</p>
+    <p style="font-size:0.8rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:1rem;">ðŸ“¥ Receiver Details</p>
     <div class="form-row">
       <div class="form-group"><label class="form-label" for="receiver_name">Receiver Name</label><input type="text" name="receiver_name" id="receiver_name" class="form-control" required></div>
       <div class="form-group"><label class="form-label" for="receiver_phone">Receiver Phone</label><input type="text" name="receiver_phone" id="receiver_phone" class="form-control" required></div>
@@ -52,8 +52,9 @@
     <div class="form-group"><label class="form-label" for="delivery_date">Delivery Date</label><input type="date" name="delivery_date" id="delivery_date" class="form-control" required min="<?= date('Y-m-d') ?>"></div>
 
     <div style="display:flex;gap:1rem;margin-top:0.5rem;">
-      <button type="submit" class="btn btn-primary btn-lg" id="btn-agent-submit">📦 Create Shipment</button>
-      <a href="/SwiftCargo/public/agent/shipments" class="btn btn-outline btn-lg">Cancel</a>
+      <button type="submit" class="btn btn-primary btn-lg" id="btn-agent-submit">ðŸ“¦ Create Shipment</button>
+      <a href="/SwiftCargo/agent/shipments" class="btn btn-outline btn-lg">Cancel</a>
     </div>
   </form>
 </div>
+

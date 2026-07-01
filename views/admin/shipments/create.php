@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 $pageTitle    = 'New Shipment | SwiftCargo';
 $pageSubtitle = 'Create a new courier booking';
 ?>
@@ -8,13 +8,13 @@ $pageSubtitle = 'Create a new courier booking';
     <h2>New Shipment</h2>
     <p>Fill in sender and receiver details</p>
   </div>
-  <a href="/SwiftCargo/public/admin/shipments" class="btn btn-outline">← Back</a>
+  <a href="/SwiftCargo/admin/shipments" class="btn btn-outline">â† Back</a>
 </div>
 
 <div class="form-card">
-  <form method="POST" action="/SwiftCargo/public/admin/shipments/store" id="create-shipment-form">
+  <form method="POST" action="/SwiftCargo/admin/shipments/store" id="create-shipment-form">
 
-    <p style="font-size:0.8rem;font-weight:700;color:var(--primary-light);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:1rem;">📤 Sender Details</p>
+    <p style="font-size:0.8rem;font-weight:700;color:var(--primary-light);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:1rem;">ðŸ“¤ Sender Details</p>
 
     <div class="form-row">
       <div class="form-group">
@@ -38,7 +38,7 @@ $pageSubtitle = 'Create a new courier booking';
     </div>
 
     <hr style="border:none;border-top:1px solid var(--border);margin:1.5rem 0;">
-    <p style="font-size:0.8rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:1rem;">📥 Receiver Details</p>
+    <p style="font-size:0.8rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:1rem;">ðŸ“¥ Receiver Details</p>
 
     <div class="form-row">
       <div class="form-group">
@@ -62,7 +62,7 @@ $pageSubtitle = 'Create a new courier booking';
     </div>
 
     <hr style="border:none;border-top:1px solid var(--border);margin:1.5rem 0;">
-    <p style="font-size:0.8rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:1rem;">📋 Shipment Details</p>
+    <p style="font-size:0.8rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:1rem;">ðŸ“‹ Shipment Details</p>
 
     <div class="form-row three">
       <div class="form-group">
@@ -90,9 +90,10 @@ $pageSubtitle = 'Create a new courier booking';
     </div>
 
     <div style="display:flex;gap:1rem;margin-top:0.5rem;">
-      <button type="submit" class="btn btn-primary btn-lg" id="btn-submit-shipment">📦 Create Shipment</button>
-      <a href="/SwiftCargo/public/admin/shipments" class="btn btn-outline btn-lg">Cancel</a>
+      <button type="submit" class="btn btn-primary btn-lg" id="btn-submit-shipment">ðŸ“¦ Create Shipment</button>
+      <a href="/SwiftCargo/admin/shipments" class="btn btn-outline btn-lg">Cancel</a>
     </div>
 
   </form>
 </div>
+

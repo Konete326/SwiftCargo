@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?= $pageTitle ?? 'SwiftCargo' ?></title>
   <meta name="description" content="SwiftCargo - Professional Courier Management System">
-  <link rel="stylesheet" href="/SwiftCargo/public/assets/css/app.css">
+  <link rel="stylesheet" href="/SwiftCargo/assets/css/app.css">
 </head>
 <body class="panel-layout">
 
@@ -18,7 +18,7 @@
         <p><?= $pageSubtitle ?? 'Welcome back, ' . htmlspecialchars(\app\Helpers\Session::get('user_name', 'Admin')) ?></p>
       </div>
       <div class="topbar-actions">
-        <a href="/SwiftCargo/public/logout" class="topbar-logout">⏏ Logout</a>
+        <a href="/SwiftCargo/logout" class="topbar-logout">â Logout</a>
       </div>
     </header>
 
@@ -28,6 +28,7 @@
     </main>
   </div>
 
-  <script src="/SwiftCargo/public/assets/js/app.js"></script>
+  <script src="/SwiftCargo/assets/js/app.js"></script>
 </body>
 </html>
+

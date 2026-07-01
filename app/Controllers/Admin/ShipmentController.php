@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 declare(strict_types=1);
 
@@ -56,7 +56,7 @@ class ShipmentController extends BaseController
 
         $this->shipments->create($data);
         $this->flashSuccess("Shipment created successfully. [SMS simulated to Sender ({$data['sender_phone']}) & Receiver ({$data['receiver_phone']}): Shipment {$data['tracking_number']} booked]");
-        $this->redirect('/SwiftCargo/public/admin/shipments');
+        $this->redirect('/SwiftCargo/admin/shipments');
     }
 
     public function edit(string $id): void
@@ -84,7 +84,7 @@ class ShipmentController extends BaseController
         } else {
             $this->flashSuccess('Shipment updated.');
         }
-        $this->redirect('/SwiftCargo/public/admin/shipments');
+        $this->redirect('/SwiftCargo/admin/shipments');
     }
 
     public function delete(string $id): void
@@ -92,6 +92,7 @@ class ShipmentController extends BaseController
         AuthMiddleware::requireAdmin();
         $this->shipments->delete((int) $id);
         $this->flashSuccess('Shipment deleted.');
-        $this->redirect('/SwiftCargo/public/admin/shipments');
+        $this->redirect('/SwiftCargo/admin/shipments');
     }
 }
+
