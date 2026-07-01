@@ -30,6 +30,9 @@ if (str_starts_with($uri, $basePublic)) {
 } elseif (str_starts_with($uri, $baseRoot)) {
     $uri = substr($uri, strlen($baseRoot));
 }
+if (str_starts_with($uri, '/index.php')) {
+    $uri = substr($uri, strlen('/index.php'));
+}
 $uri    = '/' . ltrim($uri, '/');
 $method = $_SERVER['REQUEST_METHOD'];
 
