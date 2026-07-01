@@ -47,6 +47,8 @@ $router->get('/agent/shipments/create',     [AgentShipment::class,      'create'
 $router->post('/agent/shipments/store',     [AgentShipment::class,      'store']);
 $router->get('/agent/shipments/edit/{id}',  [AgentShipment::class,      'edit']);
 $router->post('/agent/shipments/update/{id}', [AgentShipment::class,    'update']);
+$router->get('/agent/reports',              [AgentDashboard::class,     'reports']);
+$router->post('/agent/reports/download',    [AgentDashboard::class,     'downloadReport']);
 
 $router->get('/user/dashboard',             [UserDashboard::class,      'index']);
 $router->get('/user/track',                 [TrackController::class,    'showForm']);

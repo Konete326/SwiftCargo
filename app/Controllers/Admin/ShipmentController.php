@@ -55,7 +55,7 @@ class ShipmentController extends BaseController
         ];
 
         $this->shipments->create($data);
-        $this->flashSuccess('Shipment created successfully.');
+        $this->flashSuccess("Shipment created successfully. [SMS simulated to Sender ({$data['sender_phone']}) & Receiver ({$data['receiver_phone']}): Shipment {$data['tracking_number']} booked]");
         $this->redirect('/SwiftCargo/public/admin/shipments');
     }
 
@@ -66,15 +66,24 @@ class ShipmentController extends BaseController
         $cities   = $this->cities->allActive();
         $this->view('admin/shipments/edit', compact('shipment', 'cities'), 'admin');
     }
-
     public function update(string $id): void
     {
         AuthMiddleware::requireAdmin();
-
+        $shipment = $this->shipments->findById((int) $id);
         $status = $this->sanitize($this->input('status', ''));
         $this->shipments->updateStatus((int) $id, $status);
 
-        $this->flashSuccess('Shipment updated.');
+        if ($shipment) {
+            $msg = "Shipment updated.";
+            if ($status === 'delivered') {
+                $msg .= " [SMS simulated to {$shipment['sender_phone']} & {$shipment['receiver_phone']}: Shipment {$shipment['tracking_number']} has been delivered]";
+            } else {
+                $msg .= " [SMS simulated: Status changed to " . str_replace('_', ' ', $status) . "]";
+            }
+            $this->flashSuccess($msg);
+        } else {
+            $this->flashSuccess('Shipment updated.');
+        }
         $this->redirect('/SwiftCargo/public/admin/shipments');
     }
 

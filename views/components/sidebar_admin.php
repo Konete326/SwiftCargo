@@ -4,14 +4,16 @@ $currentUri  = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $userName    = Session::get('user_name', 'Admin');
 $userInitial = strtoupper(substr($userName, 0, 1));
 
-function isActive(string $path, string $current): string {
-    return str_contains($current, $path) ? 'active' : '';
+if (!function_exists('isActive')) {
+    function isActive(string $path, string $current): string {
+        return str_contains($current, $path) ? 'active' : '';
+    }
 }
 ?>
 <aside class="sidebar">
   <div class="sidebar-logo">
     <div class="logo-wrap">
-      <div class="logo-icon">🚀</div>
+      <div class="logo-icon"><img src="/SwiftCargo/public/assets/images/logo.png" alt="Logo" style="width:100%;height:100%;object-fit:contain;border-radius:inherit;"></div>
       <div>
         <h2>SwiftCargo</h2>
         <span>Management System</span>

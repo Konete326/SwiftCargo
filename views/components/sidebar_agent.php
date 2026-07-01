@@ -4,14 +4,16 @@ $currentUri  = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $userName    = Session::get('user_name', 'Agent');
 $userInitial = strtoupper(substr($userName, 0, 1));
 
-function isActiveAgent(string $path, string $current): string {
-    return str_contains($current, $path) ? 'active' : '';
+if (!function_exists('isActiveAgent')) {
+    function isActiveAgent(string $path, string $current): string {
+        return str_contains($current, $path) ? 'active' : '';
+    }
 }
 ?>
 <aside class="sidebar">
   <div class="sidebar-logo">
     <div class="logo-wrap">
-      <div class="logo-icon">🚀</div>
+      <div class="logo-icon"><img src="/SwiftCargo/public/assets/images/logo.png" alt="Logo" style="width:100%;height:100%;object-fit:contain;border-radius:inherit;"></div>
       <div>
         <h2>SwiftCargo</h2>
         <span>Management System</span>
@@ -33,6 +35,11 @@ function isActiveAgent(string $path, string $current): string {
     </a>
     <a href="/SwiftCargo/public/agent/shipments/create" class="nav-item">
       <span class="nav-icon">➕</span> New Shipment
+    </a>
+
+    <div class="nav-section-label">Reports</div>
+    <a href="/SwiftCargo/public/agent/reports" class="nav-item <?= isActiveAgent('reports', $currentUri) ?>">
+      <span class="nav-icon">📈</span> Branch Reports
     </a>
   </nav>
 

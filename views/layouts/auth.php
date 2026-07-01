@@ -9,7 +9,7 @@
 <body class="auth-page">
   <div class="auth-card">
     <div class="auth-logo">
-      <div class="logo-icon">🚀</div>
+      <div class="logo-icon"><img src="/SwiftCargo/public/assets/images/logo.png" alt="Logo" style="width:100%;height:100%;object-fit:contain;border-radius:inherit;"></div>
       <h1>SwiftCargo</h1>
       <p>Courier Management System</p>
     </div>

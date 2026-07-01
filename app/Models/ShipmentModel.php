@@ -127,6 +127,21 @@ class ShipmentModel extends BaseModel
         return $stmt->fetchAll();
     }
 
+    public function filterByAgentCityAndDate(int $cityId, string $from, string $to): array
+    {
+        $stmt = $this->db->prepare(
+            "SELECT s.*, fc.name AS from_city, tc.name AS to_city
+             FROM {$this->table} s
+             JOIN cities fc ON s.sender_city_id = fc.id
+             JOIN cities tc ON s.receiver_city_id = tc.id
+             WHERE (s.sender_city_id = ? OR s.receiver_city_id = ?)
+               AND DATE(s.created_at) BETWEEN ? AND ?
+             ORDER BY s.created_at DESC"
+        );
+        $stmt->execute([$cityId, $cityId, $from, $to]);
+        return $stmt->fetchAll();
+    }
+
     public function generateTrackingNumber(): string
     {
         return 'SC' . strtoupper(uniqid());

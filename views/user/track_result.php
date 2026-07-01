@@ -12,6 +12,17 @@ $badge = $badgeMap[$shipment['status']] ?? 'badge-secondary';
 $statusLabel = ucwords(str_replace('_', ' ', $shipment['status']));
 ?>
 
+<style>
+@media print {
+  body { background: white !important; color: black !important; }
+  header, .btn, hr, a, button { display: none !important; }
+  .track-result { border: none !important; box-shadow: none !important; background: transparent !important; margin: 0 !important; padding: 0 !important; width: 100% !important; max-width: 100% !important; }
+  .track-route, .track-details { color: black !important; }
+  .track-number { background: #eee !important; border: 1px solid #ccc !important; color: black !important; }
+  .badge { border: 1px solid #ccc !important; color: black !important; background: transparent !important; }
+}
+</style>
+
 <div style="max-width:680px;margin:2rem auto;">
   <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:0.75rem;">
     <a href="/SwiftCargo/public/user/track" class="btn btn-outline btn-sm">← Track Another</a>

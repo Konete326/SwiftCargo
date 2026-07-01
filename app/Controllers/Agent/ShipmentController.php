@@ -56,7 +56,7 @@ class ShipmentController extends BaseController
         ];
 
         $this->shipments->create($data);
-        $this->flashSuccess('Shipment created.');
+        $this->flashSuccess("Shipment created. [SMS simulated to Sender ({$data['sender_phone']}) & Receiver ({$data['receiver_phone']}): Shipment {$data['tracking_number']} booked]");
         $this->redirect('/SwiftCargo/public/agent/shipments');
     }
 
@@ -71,9 +71,21 @@ class ShipmentController extends BaseController
     public function update(string $id): void
     {
         AuthMiddleware::requireAgent();
+        $shipment = $this->shipments->findById((int) $id);
         $status = $this->sanitize($this->input('status', ''));
         $this->shipments->updateStatus((int) $id, $status);
-        $this->flashSuccess('Status updated.');
+
+        if ($shipment) {
+            $msg = "Status updated.";
+            if ($status === 'delivered') {
+                $msg .= " [SMS simulated to {$shipment['sender_phone']} & {$shipment['receiver_phone']}: Shipment {$shipment['tracking_number']} has been delivered]";
+            } else {
+                $msg .= " [SMS simulated: Status changed to " . str_replace('_', ' ', $status) . "]";
+            }
+            $this->flashSuccess($msg);
+        } else {
+            $this->flashSuccess('Status updated.');
+        }
         $this->redirect('/SwiftCargo/public/agent/shipments');
     }
 }
