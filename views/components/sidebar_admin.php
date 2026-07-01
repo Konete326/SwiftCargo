@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 use app\Helpers\Session;
 $currentUri  = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $userName    = Session::get('user_name', 'Admin');
@@ -26,26 +26,38 @@ if (!function_exists('isActive')) {
   <nav class="sidebar-nav">
     <div class="nav-section-label">Overview</div>
     <a href="/SwiftCargo/admin/dashboard" class="nav-item <?= isActive('dashboard', $currentUri) ?>">
-      <span class="nav-icon">ðŸ“Š</span> Dashboard
+      <span class="nav-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+      </span> Dashboard
     </a>
 
     <div class="nav-section-label">Shipments</div>
     <a href="/SwiftCargo/admin/shipments" class="nav-item <?= isActive('shipments', $currentUri) ?>">
-      <span class="nav-icon">ðŸ“¦</span> All Shipments
+      <span class="nav-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+      </span> All Shipments
     </a>
     <a href="/SwiftCargo/admin/shipments/create" class="nav-item">
-      <span class="nav-icon">âž•</span> New Shipment
+      <span class="nav-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+      </span> New Shipment
     </a>
 
     <div class="nav-section-label">Management</div>
     <a href="/SwiftCargo/admin/agents" class="nav-item <?= isActive('agents', $currentUri) ?>">
-      <span class="nav-icon">ðŸ‘¤</span> Agents
+      <span class="nav-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </span> Agents
     </a>
     <a href="/SwiftCargo/admin/customers" class="nav-item <?= isActive('customers', $currentUri) ?>">
-      <span class="nav-icon">ðŸ‘¥</span> Customers
+      <span class="nav-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </span> Customers
     </a>
     <a href="/SwiftCargo/admin/reports" class="nav-item <?= isActive('reports', $currentUri) ?>">
-      <span class="nav-icon">ðŸ“ˆ</span> Reports
+      <span class="nav-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+      </span> Reports
     </a>
   </nav>
 
@@ -59,4 +71,3 @@ if (!function_exists('isActive')) {
     </div>
   </div>
 </aside>
-

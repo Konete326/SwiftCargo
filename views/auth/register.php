@@ -1,4 +1,14 @@
-﻿<?php $pageTitle = 'Register | SwiftCargo'; ?>
+<?php $pageTitle = 'Sign Up | SwiftCargo'; ?>
+
+<div class="auth-tab-row">
+  <a href="/SwiftCargo/login" class="auth-tab-link">Sign In</a>
+  <a href="/SwiftCargo/register" class="auth-tab-link active">Sign Up</a>
+</div>
+
+<div class="auth-form-header">
+  <h2>Create Account</h2>
+  <p>Register to start tracking your shipments</p>
+</div>
 
 <form method="POST" action="/SwiftCargo/register" id="register-form">
   <div class="form-group">
@@ -23,16 +33,15 @@
 
   <div class="form-group">
     <label class="form-label" for="confirm_password">Confirm Password</label>
-    <input type="password" name="confirm_password" id="confirm_password" class="form-control" placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢" required>
+    <input type="password" name="confirm_password" id="confirm_password" class="form-control" placeholder="Repeat your password" required>
   </div>
 
   <button type="submit" class="btn btn-primary btn-full btn-lg" id="register-btn">
-    âœ… Create Account
+    Create Account
   </button>
 </form>
 
-<p style="text-align:center; margin-top:1.25rem; font-size:0.85rem; color:var(--text-muted);">
+<p class="auth-switch-text">
   Already have an account?
-  <a href="/SwiftCargo/login" style="color:var(--primary-light); font-weight:600;">Sign in</a>
+  <a href="/SwiftCargo/login">Sign in here</a>
 </p>
-

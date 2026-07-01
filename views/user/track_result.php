@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 $pageTitle = 'Tracking Result | SwiftCargo';
 
 $badgeMap = [
@@ -25,25 +25,25 @@ $statusLabel = ucwords(str_replace('_', ' ', $shipment['status']));
 
 <div style="max-width:680px;margin:2rem auto;">
   <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:0.75rem;">
-    <a href="/SwiftCargo/user/track" class="btn btn-outline btn-sm">â† Track Another</a>
-    <button onclick="window.print()" class="btn btn-info btn-sm" id="btn-print">ðŸ–¨ Print</button>
+    <a href="/SwiftCargo/user/track" class="btn btn-outline btn-sm">&larr; Track Another</a>
+    <button onclick="window.print()" class="btn btn-info btn-sm" id="btn-print">Print</button>
   </div>
 
   <div class="track-result">
     <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.75rem;margin-bottom:1.5rem;">
-      <div class="track-number">ðŸ“¦ <?= htmlspecialchars($shipment['tracking_number']) ?></div>
+      <div class="track-number"><?= htmlspecialchars($shipment['tracking_number']) ?></div>
       <span class="badge <?= $badge ?>" style="font-size:0.85rem;padding:0.4rem 1rem;"><?= $statusLabel ?></span>
     </div>
 
     <div class="track-route">
       <div class="track-city">
-        <span style="font-size:1.5rem;">ðŸ“¤</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="var(--primary-light)" stroke-width="2" style="margin-bottom:0.4rem;"><circle cx="12" cy="12" r="10"/><polyline points="8 12 12 8 16 12"/><line x1="12" y1="16" x2="12" y2="8"/></svg>
         <strong><?= htmlspecialchars($shipment['from_city']) ?></strong>
         <span>Sender</span>
       </div>
-      <div class="track-arrow">âœˆ â”€â”€â”€â”€</div>
+      <div class="track-arrow">&rarr;</div>
       <div class="track-city">
-        <span style="font-size:1.5rem;">ðŸ“¥</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="var(--accent)" stroke-width="2" style="margin-bottom:0.4rem;"><circle cx="12" cy="12" r="10"/><polyline points="8 12 12 16 16 12"/><line x1="12" y1="8" x2="12" y2="16"/></svg>
         <strong><?= htmlspecialchars($shipment['to_city']) ?></strong>
         <span>Receiver</span>
       </div>
@@ -91,4 +91,3 @@ $statusLabel = ucwords(str_replace('_', ' ', $shipment['status']));
     </div>
   </div>
 </div>
-

@@ -1,8 +1,13 @@
-﻿<?php
-$pageTitle = 'Login | SwiftCargo';
-?>
-<div class="auth-tabs">
-  <button class="auth-tab active" id="tab-btn">Login</button>
+<?php $pageTitle = 'Sign In | SwiftCargo'; ?>
+
+<div class="auth-tab-row">
+  <a href="/SwiftCargo/login" class="auth-tab-link active">Sign In</a>
+  <a href="/SwiftCargo/register" class="auth-tab-link">Sign Up</a>
+</div>
+
+<div class="auth-form-header">
+  <h2>Welcome Back</h2>
+  <p>Sign in to your SwiftCargo account</p>
 </div>
 
 <form method="POST" action="/SwiftCargo/login" id="login-form">
@@ -22,16 +27,15 @@ $pageTitle = 'Login | SwiftCargo';
 
   <div class="form-group">
     <label class="form-label" for="password">Password</label>
-    <input type="password" name="password" id="password" class="form-control" placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢" required>
+    <input type="password" name="password" id="password" class="form-control" placeholder="Enter your password" required>
   </div>
 
   <button type="submit" class="btn btn-primary btn-full btn-lg" id="login-btn">
-    ðŸ” Sign In
+    Sign In
   </button>
 </form>
 
-<p style="text-align:center; margin-top:1.25rem; font-size:0.85rem; color:var(--text-muted);">
+<p class="auth-switch-text">
   Don't have an account?
-  <a href="/SwiftCargo/register" style="color:var(--primary-light); font-weight:600;">Register here</a>
+  <a href="/SwiftCargo/register">Create one here</a>
 </p>
-
